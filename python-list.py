@@ -24,3 +24,5 @@ aws_list.remove("Amazon SNS")
 #print updated list and length of list
 print(aws_list)
 print(f"There are {len(aws_list)} items in this list")
+
+
