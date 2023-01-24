@@ -15,7 +15,7 @@ def create_topic(name):
     """
     try:
         topic = sns_client.create_topic(Name=name)
-        logger.info(f'Created SNS topic {name}.')
+        logger.info(f'SNS: {name} created.')
     except ClientError:
         logger.exception(f'Could not create SNS topic {name}.')
         raise
@@ -23,5 +23,5 @@ def create_topic(name):
         return topic
 
 if __name__ == '__main__':
-    logger.info(f'Creating SNS topic {topic_name}...')
+    logger.info(f'Creating SNS topic: {topic_name}...')
     topic = create_topic(topic_name)
