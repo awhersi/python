@@ -4,15 +4,15 @@ from botocore.exceptions import ClientError
 
 
 # delcaring the name of the queue and the region it will be created in
-QUEUE_NAME = 'my_sqs_queue'
-REGION = 'us-east-1'
+queue_name = 'my_sqs_queue'
+region = 'us-east-1'
 
 
 # logger config
 logger = logging.getLogger()
 logging.basicConfig(level=logging.INFO, 
 format='%(asctime)s: %(levelname)s: %(message)s')
-sqs_resource = boto3.resource("sqs", region_name=REGION)
+sqs_resource = boto3.resource("sqs", region_name=region)
 
 
 def create_queue(queue_name, ds, vt):
@@ -35,6 +35,6 @@ if __name__ == '__main__':
 
     ds = '0'
     vt = '60'
-    output = create_queue(QUEUE_NAME, ds, vt)
+    output = create_queue(queue_name, ds, vt)
     logger.info(
-        f'{QUEUE_NAME} created. Queue URL - {output.url}')
+        f'{queue_name} created. Queue URL - {output.url}')
