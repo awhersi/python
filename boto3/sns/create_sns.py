@@ -1,13 +1,13 @@
 import logging
 import boto3
 from botocore.exceptions import ClientError
-AWS_REGION = 'us-east-1'
+REGION = 'us-east-1'
 topic_name = 'week15_sns2'
 # logger config
 logger = logging.getLogger()
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s: %(levelname)s: %(message)s')
-sns_client = boto3.client('sns', region_name=AWS_REGION)
+sns_client = boto3.client('sns', region_name=REGION)
 
 def create_topic(name):
     """
