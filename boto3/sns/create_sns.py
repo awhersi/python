@@ -4,7 +4,7 @@ from botocore.exceptions import ClientError
 
 
 # delcaring the name of the topic and the region it will be created in
-REGION = 'us-east-1'
+region = 'us-east-1'
 topic_name = 'my_sns'
 
 
@@ -12,7 +12,7 @@ topic_name = 'my_sns'
 logger = logging.getLogger()
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s: %(levelname)s: %(message)s')
-sns_client = boto3.client('sns', region_name=REGION)
+sns_client = boto3.client('sns', region_name=region)
 
 
 #creating a SNS notification topic.
